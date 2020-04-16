@@ -73,32 +73,32 @@ class Signup extends Component {
             <form onSubmit={event=>this.handleSubmit(event)}  className="textboxsign">
                 <Container>
                 <Row>
-               <Col s={6}>
+               <Col s={12} l={6}>
                 <label >First name</label>
                 <input type="text" className="usertext" required placeholder="Enter First name" onChange={(event)=>this.handleChange(event,"firstname")}/>
                 </Col>
-                <Col s={6}>
+                <Col s={12} l={6}>
                 <label >Last name</label>
                 <input type="text" className="usertext" placeholder="Enter Last name" onChange={(event)=>this.handleChange(event,"lastname")}/>
                 </Col>
                 </Row>
                 <Row>
-                <Col s={6}>
+                <Col s={12} l={6}>
                 <label >Email</label>
                 <input type="text" className="usertext" required placeholder="Enter email" onChange={(event)=>this.handleChange(event,"email")}/>
                 </Col>
-                <Col s={6}>
+                <Col s={12} l={6}>
                 <label >Password</label>
                 <input type="password" className="usertext"  required name="password" placeholder="Enter password" onChange={(event)=>this.handleChange(event,"password")}/>
                 </Col>
                 </Row>
                 <Row>
-                <Col s={6}>
+                <Col s={12} l={6}>
             
                 <label >Location</label>
                 <input type="text" className="usertext" placeholder="Enter your city" onChange={(event)=>this.handleChange(event,"location")}/>
                 </Col>
-                <Col s={6}>
+                <Col s={12} l={6}>
                 <label >Mobile no.</label>
                 <input type="text" className="usertext" required placeholder="Enter Mobile no." onChange={(event)=>this.handleChange(event,"mobno")}/>
                 </Col>
