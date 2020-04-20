@@ -1,11 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import  '../index.css'
 import Navgbar from '../Subcompo/Navgbar';
-import {Link,Redirect,withRouter} from 'react-router-dom';
+import {Link,Redirect,withRouter,BrowserRouter as Router} from 'react-router-dom';
 import Auth  from '../helper/Auth';
 import Message from '../helper/Message'
 class Login extends Component {
     constructor(props) {
+        console.log('in login');
         super(props);
         this.state = {
             email: "",
@@ -41,8 +42,7 @@ class Login extends Component {
         .then(res=>{
             if (res.success===true)
             {localStorage.setItem('name',res.sname)
-            this.setState({'success':true,
-                        })
+            this.setState({'success':true})
             
             }
             else
@@ -78,9 +78,10 @@ class Login extends Component {
         }
         
 
-                return (<div>
+                return (
+                <div>
             <Navgbar Group="" />
-            {this.state.error==true?<Message mestype="alert-danger" mes="You have entered incorrect Email or Passsword"/>:null}
+            {this.state.error===true?<Message mestype="alert-danger" mes="You have entered incorrect Email or Passsword"/>:null}
         <div className="mainlog">
         <div className="innerlog">
             <h2 className="loghead">Log in</h2>
@@ -94,7 +95,7 @@ class Login extends Component {
         </div>
      
         </div>
-                  );
+           );
     }
 }
  

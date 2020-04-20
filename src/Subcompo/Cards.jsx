@@ -11,7 +11,7 @@ function Cards(props) {
   return (
     <Col m={4} s={6} l={3}>
       <Card
-        className="card small border"
+        className="card medium border"
         closeIcon={<Icon>close</Icon>}
         header={
           <CardTitle
@@ -32,8 +32,14 @@ function Cards(props) {
         <p>
         {props.title}
         </p>
-        <h6 className="text-uppercase locda col-lg-6 col-sm-6"><FontAwesomeIcon icon={faMapMarkerAlt} size="sm"/>{props.location} </h6>
-//         <h6 className="col-lg-6 locdate col-sm-6">{props.date_post}</h6>
+        <Row>
+          <Col s={6}>
+        <h6><FontAwesomeIcon icon={faMapMarkerAlt} size="sm"/>{props.location} </h6>
+        </Col>
+        <Col s={6}>
+         <h6>{props.date_post}</h6>
+        </Col>
+        </Row>
       </Card>
     </Col>
   );

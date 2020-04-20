@@ -41,7 +41,7 @@ class Home extends Component{
         return(
             <div>
             <Navgbar/>
-      {/* TODO:     <Sliders/> */}
+           <Sliders/>
             {this.state.loading?
             
             <iframe src="https://giphy.com/embed/3ohzdOrcdpiD26TPt6" width="100" height="100" frameBorder="0" class="giphy-embed"></iframe>
