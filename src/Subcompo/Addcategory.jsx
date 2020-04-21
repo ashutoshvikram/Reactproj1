@@ -10,42 +10,32 @@ import {
 export default function Addcategory(){
     return (
         <div>
-    <h3 style={{textAlign:'center'}}>CATEGORY OF POST</h3>
-    <div className="categorypost">
-            
+    
+    <div className="categorypost card-panel teal lighten-2">
+    <h3  className="headcategory">CATEGORY</h3> 
+   
         <Row>
-           <Link to="/post/property"> Property</Link> <FontAwesomeIcon icon={faArrowRight}/> 
+           <Link to="/post/property"> Property<FontAwesomeIcon icon={faArrowRight}/> </Link> 
         </Row>
         <Row>
-            Automobile<FontAwesomeIcon icon={faArrowRight}/>
+        <Link to="/post/Automobile"> Automobile</Link><FontAwesomeIcon icon={faArrowRight}/>
         </Row>
         <Row>
-            Electronics <FontAwesomeIcon icon={faArrowRight}/>
+        <Link to="/post/Electronics"> Electronics </Link><FontAwesomeIcon icon={faArrowRight}/>
         </Row>
         <Row>
-            Mobiles <FontAwesomeIcon icon={faArrowRight}/>
+        <Link to="/post/Mobiles">  Mobiles </Link><FontAwesomeIcon icon={faArrowRight}/>
         </Row>
         <Row>
-            Fashion & Beauty <FontAwesomeIcon icon={faArrowRight}/>
+        <Link to="/post/FashionBeauty"> Fashion & Beauty </Link><FontAwesomeIcon icon={faArrowRight}/>
         </Row>
         <Row>
-            Furnitures <FontAwesomeIcon icon={faArrowRight}/>
+        <Link to="/post/Furnitures"> Furnitures</Link> <FontAwesomeIcon icon={faArrowRight}/>
         </Row>
         <Row>
-            Property <FontAwesomeIcon icon={faArrowRight}/>
+        <Link to="/post/ElectricalAppiances">Electrical Appliances</Link> <FontAwesomeIcon icon={faArrowRight}/>
         </Row>
-        <Row>
-            Property <FontAwesomeIcon icon={faArrowRight}/>
-        </Row>
-        <Row>
-            Property <FontAwesomeIcon icon={faArrowRight}/>
-        </Row>
-        <Row>
-            Property<FontAwesomeIcon icon={faArrowRight}/>
-        </Row>
-        <Row>
-            Property <FontAwesomeIcon icon={faArrowRight}/>
-        </Row>
+      
         
         </div>
    

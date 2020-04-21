@@ -61,7 +61,7 @@ class Home extends Component{
 
         ))
        
-        }<Cards/><Cards/>
+        }
     </Row>
     
      

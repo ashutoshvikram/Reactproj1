@@ -5,21 +5,97 @@ import '../index.css'
 import Carouselimg from '../helper/Carouselimg';
  function Carousel_add(props)
 {
-
+  console.log(props.proimages[0])
     return (
      
-      <Carousel autoPlay className="newheight"> 
-         {props.proimages.map((images)=>{
-           return(
-           <div className="carheight">
-           <img alt="" src={"http://localhost:8000"+images.Product_images}/>
-           <p className="legend">Legend 2</p>
-         </div>);
+      <Carousel autoPlay  showThumbs={true} className="newheight"> 
+        
+        <div className="carheight">
+        <img alt="" src={"http://localhost:8000"+props.proimages.Product_images0} />
+        <p className="legend">Legend 1</p>
+      </div>
+      <div className="carheight">
+        <img alt="" src={"http://localhost:8000"+props.proimages.Product_images1} />
+        <p className="legend">Legend 1</p>
+      </div>
+
+      <div className="carheight">
+        <img alt="" src={"http://localhost:8000"+props.proimages.Product_images2} />
+        <p className="legend">Legend 1</p>
+      </div>
+      <div className="carheight">
+        <img alt="" src={"http://localhost:8000"+props.proimages.Product_images3} />
+        <p className="legend">Legend 1</p>
+      </div>
+      <div className="carheight">
+        <img alt="" src={"http://localhost:8000"+props.proimages.Product_images4} />
+        <p className="legend">Legend 1</p>
+      </div>
+      <div className="carheight">
+        <img alt="" src={"http://localhost:8000"+props.proimages.Product_images5} />
+        <p className="legend">Legend 1</p>
+      </div>
+      <div className="carheight">
+        <img alt="" src={"http://localhost:8000"+props.proimages.Product_images6} />
+        <p className="legend">Legend 1</p>
+      </div>
+      <div className="carheight">
+        <img alt="" src={"http://localhost:8000"+props.proimages.Product_images7} />
+        <p className="legend">Legend 1</p>
+      </div>
+      <div className="carheight">
+        <img alt="" src="/rooms.jpg"/>
+        <p className="legend">Legend 1</p>
+      </div>
+
+
+
+         {/* {props.proimages.map(proimages=>{
+           return(<div>
+              <div className="carheight">
+           <img alt=""  src={"http://localhost:8000"+proimages.Product_images0}/>
+         
+            </div>
+            <div className="carheight">
+           <img alt="" src={"http://localhost:8000"+proimages.Product_images1}/>
+          
+            </div>
+            <div className="carheight">
+           <img alt="" src={"http://localhost:8000"+proimages.Product_images2}/>
+           </div>
+            <div className="carheight">
+           <img alt="" src={"http://localhost:8000"+proimages.Product_images3}/>
+           
+            </div>
+            <div className="carheight">
+           <img alt="" src={"http://localhost:8000"+proimages.Product_images4}/>
+           
+            </div>
+            <div className="carheight">
+           <img alt="" src={"http://localhost:8000"+proimages.Product_images5}/>
+          
+            </div>
+            <div className="carheight">
+           <img alt="" src={"http://localhost:8000"+proimages.Product_images6}/>
+           
+            </div>
+            <div className="carheight">
+           <img alt="" src={"http://localhost:8000"+proimages.Product_images7}/>
+           
+            </div>
+
+
+
+
+           </div>);
          })
         }
+            */}
+            
+        
        </Carousel>
         );
-        }
+}
 
       /* <div className="carheight">
         <img alt="" src="http://lorempixel.com/output/cats-q-c-640-480-1.jpg" />

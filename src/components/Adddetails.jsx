@@ -15,13 +15,13 @@ const [values,setValues]=useState({proname:'',desc:'',
 const { proname, desc, success,img, price, sellername,postedon,location,memberdt,profileimg } = values;
 async function apifetch(){
     console.error("chala")
-    const response= await fetch('http://localhost:8000/api/post/1',{credentials:'include'})
+    const response= await fetch('http://localhost:8000/api/post/43',{credentials:'include'})
     const res=await response.json()
     console.log(res);
     setValues({...values,proname:res.items.Product_name,sucess:true,
         desc:res.items.Description, location:res.items.Location,
         postedon:res.items.posted_on,   memberdt:res.seller.registered_on,
-        img:res.productimage,
+        img:res.productimage[0],
         sellername:res.seller.firstname+res.seller.lastname,
         profileimg:res.seller.Profile_pic,  price:res.items.Price
     })
@@ -33,8 +33,9 @@ useEffect(()=>{
 
 
 
-
-
+const locate='Varanasi';
+const urls=`https://www.google.com/maps/embed/v1/place?key=AIzaSyCfF-k0ecpBaGMWRzb43xcKRYENxX9IkxY
+&q=${locate}`
 
 
 return (
@@ -96,21 +97,15 @@ return (
 
 <Col s={12} l={4} className="mapdiv">
     <h4>POSTED IN</h4>
-    Lorem ipsum dolor sit amet consectetur adipisicing e
-    lit. Impedit, quasi? Atque accusantium fugit voluptas
-     enim placeat inventore exercitationem, labore quide
-     m neque mollitia blanditiis, dolorum sit! Optio volu
-    ptate cupiditate praesentium iste facilis fugiat non
-      reprehenderit sit repellat nemo corporis pariatur v
-      oluptatum aliquam, soluta quam animi, amet consequu
-      ntur porro cum quo qui! Non commodi consequatur sit
-       neque praesentium ratione laudantium quibusdam ten
-       etur! Magni quibusdam nam dignissimos hic ut! Nesc
-       iunt non accusantium nulla? Illum, magnam repellen
-       dus ea autem eos delectus soluta excepturi quos du
-       cimus quibusdam. Voluptas error facilis possimus c
-       umque, tenetur tempora consectetur quas, et a opti
-       o explicabo impedit eum iure laborum? Dignissimos?
+    <iframe
+            width="430"
+            height="500"
+            frameborder="0"
+            src={urls}
+    //         src=`https://www.google.com/maps/embed/v1/place?key=AIzaSyCfF-k0ecpBaGMWRzb43xcKRYENxX9IkxY
+    // &q=${locate}`
+            allowfullscreen
+          ></iframe>
 </Col>
 
 

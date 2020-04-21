@@ -71,7 +71,7 @@ class Login extends Component {
     }
     
     render() { 
-         if (this.state.success===true && Auth()===true)
+         if (this.state.success===true || Auth()===true)
         {
            return (<Redirect to="/"/>);
             

@@ -1,28 +1,24 @@
 import React, { Component,useState,useEffect } from 'react';
-import {Col,Row} from 'react-materialize'
+import {Col,Row,Footer} from 'react-materialize'
 import Navgbar from '../Subcompo/Navgbar';
-import Footer from '../Subcompo/Footer'
+
 import Addcategory from '../Subcompo/Addcategory'
 import AddForm from './AddForm';
 
-function PostAdd(){
+function PostAdd1(props){
 
     return ( <div>
         
         <Navgbar/>
         <Row>
-        <Col l={4} s={12}>
+        <Col l={4}>
         <Addcategory/>
         </Col>
-        <Col l={8} s={12}>
-       <h1>Please Select the category of Add</h1>
+        <Col l={8}>
+       <AddForm cat={props.match.params.category}/>
             </Col>
         </Row>
-        <Row>
-            <div className="newfooter">
-        <Footer/>
-        </div>
-        </Row>
+        
         </div>);
 }
-export default PostAdd;
+export default PostAdd1;

@@ -20,7 +20,7 @@ export default function AddForm(props){
         if (name!="p_img"){
             
             setValues({...values,[name]:event.target.value});
-            console.log(name,event.target.value)
+          
             
         }
         else
@@ -28,8 +28,7 @@ export default function AddForm(props){
             const images = event.target.files
             setValues({...values,names:names.concat(images[0].name),
                 p_img:p_img.concat(images[0]),p_category:"Computer"})
-            console.log(names)
-            
+           
             console.log(values.success,"as")
             console.log('image uplloaded')
             console.log(p_img)
@@ -45,8 +44,13 @@ export default function AddForm(props){
         formvalues.append(' p_description' ,p_description)
         formvalues.append('p_location',p_location)
         formvalues.append('p_category','Electronics')
-        const nextfetch=()=>{
-            formimages.append('Product_id',id)
+        for (var x = 0; x < p_img.length; x++) {
+            formimages.append('Product_images'+x,p_img[x])
+            
+         }
+        const nextfetch=(newid)=>{
+          
+            formimages.append('Product_id',newid)
             fetch('http://localhost:8000/api/postadd',{
             credentials:'include',
             method: "POST",
@@ -64,19 +68,17 @@ export default function AddForm(props){
             
         }).then(res=>res.json()).then(res=>{
             console.log(res.id)
-            formimages.append('Product_id',res.id)
-          setValues({...values,id:res.id})
-           
-        })
-        
-        for (var x = 0; x < p_img.length; x++) {
-            formimages.append('Product_images'+x,p_img[x])
             
-         }
+          setValues({...values,id:res.id})
+          nextfetch(res.id)
+        })
+
+        
+       
          
         //formvalues.append('p_category',p_category)
         console.log(formimages)
-        nextfetch()
+        
         
         
       
@@ -85,10 +87,11 @@ export default function AddForm(props){
 
    return(
    <div>
-    <Navgbar/>
-    <h3 id="headingform">POST YOUR ADD</h3>
+    
+    
     <div className="formadd">
-        
+    <h3 id="headingform">POST YOUR ADD</h3>
+        <h5>Category:{props.cat}</h5>
     <form action="" onSubmit={event => handleSubmit(event)}>
         <h5>Product name</h5>
         <input  type="text"  name="p_name" id="inputform"  onChange={(event)=>handleChange(event,'p_name')} />
@@ -150,7 +153,7 @@ export default function AddForm(props){
         
     </form>
     </div>
-    <Footer/>
+   
     </div>
     ) ;
 }

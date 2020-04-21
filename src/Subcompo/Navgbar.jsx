@@ -4,11 +4,12 @@ import "../App.css";
 import "../index.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch, faBars } from "@fortawesome/free-solid-svg-icons";
-import { Link, withRouter ,BrowserRouter as Router} from "react-router-dom";
+import { Link, withRouter ,BrowserRouter as Router,useHistory} from "react-router-dom";
 import Message from "../helper/Message";
 import Auth from "../helper/Auth";
+import {logout} from '../helper/Auth'
 import {
-  Navbar,
+  Navbar,Toast,
   NavItem,
   Icon,
   TextInput,
@@ -18,10 +19,9 @@ import {
   Collapsible,
   CollapsibleItem,Col,Row
 } from "react-materialize";
-class Navgbar extends React.Component {
- 
-  render() {
-    return (
+function Navgbar() {
+  let history = useHistory();
+ return (
         <Navbar
         className="navibox"
         alignLinks="right"
@@ -54,26 +54,69 @@ class Navgbar extends React.Component {
           preventScrolling: true
         }}
         sidenav={
-         < Fragment>
-            <h5>
-              <Link to="/signup">Sign in</Link>
-            </h5>
-            <h5>
+         < div className="sidenave #e57373 red lighten-2">
+            <p>
+              <Link to="/signup">Home</Link>
+            </p>
+            <p>
+              <Link to="/signup">Location</Link>
+            </p>
+            <p>
+            <Dropdown
+  id="Dropdown_6"
+  options={{
+    alignment: 'left',
+    autoTrigger: true,
+    closeOnClick: true,
+    constrainWidth: true,
+    container: null,
+    coverTrigger: true,
+    hover: false,
+    inDuration: 150,
+    onCloseEnd: null,
+    onCloseStart: null,
+    onOpenEnd: null,
+    onOpenStart: null,
+    outDuration: 250
+  }}
+  trigger={<p>Category</p>}
+>
+  <a href="#">
+    one
+  </a>
+  <a href="#">
+    two
+  </a>
+ </Dropdown>
+            </p>
+
+            <p>
+              <Link to="/signup">Login</Link>
+            </p>
+            <p>
+              <Link to="/signup">Ashutosh</Link>
+            </p>
+            <p>
               <Link to="/login">Login</Link>
-            </h5>
-            </Fragment>
+            </p>
+            </div>
         }
       >
         <NavItem>
           <Link to="/">Home</Link>
         </NavItem>
-        
-
-
         <NavItem>
-          <Link to="/login">Login</Link>
+          <Link to="/">Location</Link>
         </NavItem>
+       
         <NavItem>
+          <Link to="">Category</Link>
+        </NavItem>
+        
+       {Auth()!==true?<NavItem>
+          <Link to="/login">Login</Link>
+        </NavItem>:
+       <Fragment>
           <Dropdown
             id="Dropdown_5"
             options={{
@@ -96,8 +139,35 @@ class Navgbar extends React.Component {
             <a href="#">My Favourites</a>
             <a href="#">My adds</a>
             <a href="#">My Profilel</a>
+           
           </Dropdown>
-        </NavItem>
+          
+          
+          </Fragment>
+}
+ {Auth()?
+  <NavItem><Toast className="toaster"
+  options={{
+    html: 'You have logged out successfully.....'
+  }}
+>
+  <a  onClick={()=>{
+              logout()
+              history.push('/')
+
+            }}
+  >Logout</a>
+</Toast></NavItem>:null
+}         
+
+  
+
+
+        
+        
+       {Auth()?<NavItem>
+          <Link to="/post">SELL</Link>
+        </NavItem>:null} 
         <NavItem>
           <form action="">
             <TextInput id="TextInput-4" placeholder="Search" />
@@ -108,5 +178,5 @@ class Navgbar extends React.Component {
 
     );
   }
-}
+
 export default withRouter( Navgbar);

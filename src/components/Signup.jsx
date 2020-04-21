@@ -58,6 +58,9 @@ class Signup extends Component {
     if (this.state.success === true) {
       return <Redirect to="/login" />;
     }
+    else if(localStorage.getItem('name')){
+      return <Redirect to="/"/>
+    }
     return (
       <div>
         <Navgbar Group="" />
