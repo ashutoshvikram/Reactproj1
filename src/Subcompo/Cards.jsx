@@ -11,7 +11,7 @@ function Cards(props) {
   return (
     <Col m={4} s={6} l={3}>
       <Card
-        className="card medium border"
+        className="card small border rowcard"
         closeIcon={<Icon>close</Icon>}
         header={
           <CardTitle
@@ -27,10 +27,10 @@ function Cards(props) {
           </p>
         }
         revealIcon={<Icon>:</Icon>}
-        title={props.price}
+        title={<Link className="cardlink" to={"/add/"+props.title+"/"+props.id}>{props.price}</Link>}
       >
         <p>
-        {props.title}
+        <Link  className="cardlink" to={"/add/"+props.title+"/"+props.id}>{props.title}</Link>
         </p>
         <Row>
           <Col s={6}>
@@ -44,36 +44,5 @@ function Cards(props) {
     </Col>
   );
  }
-//  older
-// class Cardsa extends React.Component{
-    
-    
-//     render(){
-        
-  
-//         return(
-           
-//             <div className=" col-lg-4 col-sm-6 rowcard">
-//                 <div className="border">
-//              <img className="imagecard"width="300px" height="200px" src={"http://localhost:8000"+this.props.image} 
-//              alt="this is an ice pic"/>
-             
-//           <h5 className="card-title"><div className="cardprice">&#8377;{this.props.price} </div></h5>
-//           <h6 className="text-uppercase cardprod"><Link to={"add/?id="+this.props.id}>{this.props.title}</Link></h6>
-         
-//          <div className="container cardloc">
 
-//              <div className="row">
-//        <h6 className="text-uppercase locda col-lg-6 col-sm-6"><FontAwesomeIcon icon={faMapMarkerAlt} size="sm"/>{this.props.location} </h6>
-//         <h6 className="col-lg-6 locdate col-sm-6">{this.props.date_post}</h6>
-//         </div>
-//            </div>
-//            </div>
-//            </div>
-        
-//           )
-        
-    
-//     }
-// };
 export default Cards;

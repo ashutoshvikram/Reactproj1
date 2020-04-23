@@ -2,7 +2,7 @@ import React, { Component,useState,useEffect } from 'react';
 import Navgbar from '../Subcompo/Navgbar';
 import '../index.css'
 import Footer from '../Subcompo/Footer'
-import { Row } from 'react-materialize';
+import { Row,Col } from 'react-materialize';
 export default function AddForm(props){
    
     const [values,setValues]=useState({ 
@@ -43,7 +43,7 @@ export default function AddForm(props){
         formvalues.append('p_price',p_price)
         formvalues.append(' p_description' ,p_description)
         formvalues.append('p_location',p_location)
-        formvalues.append('p_category','Electronics')
+        formvalues.append('p_category',props.cat)
         for (var x = 0; x < p_img.length; x++) {
             formimages.append('Product_images'+x,p_img[x])
             
@@ -89,21 +89,22 @@ export default function AddForm(props){
    <div>
     
     
-    <div className="formadd">
-    <h3 id="headingform">POST YOUR ADD</h3>
+    <div >
+    <h3 >POST YOUR ADD</h3>
         <h5>Category:{props.cat}</h5>
+        <Col l={6}  s={6} className="formcol">
     <form action="" onSubmit={event => handleSubmit(event)}>
         <h5>Product name</h5>
-        <input  type="text"  name="p_name" id="inputform"  onChange={(event)=>handleChange(event,'p_name')} />
+        <input  type="text"  name="p_name"  onChange={(event)=>handleChange(event,'p_name')} />
         <h5>Price</h5>
-        <input  type="text"   name="p_price" id="inputform2" onChange={(event)=>handleChange(event,'p_price')}/>
+        <input  type="text"   name="p_price"  onChange={(event)=>handleChange(event,'p_price')}/>
         
         
         <h5 >Description</h5>        
-        <input className="innerformtext" type="text"    name="p_price" id="inputform3" onChange={(event)=>handleChange(event,'p_description')}/>
+        <input className="innerformtext" type="text"    name="p_price"  onChange={(event)=>handleChange(event,'p_description')}/>
         
         <h5 >Location</h5>
-        <input className="innerformtext" type="text"   name="p_loc" id="inputform4" onChange={(event)=>handleChange(event,'p_location')}/>
+        <input className="innerformtext" type="text"   name="p_loc" onChange={(event)=>handleChange(event,'p_location')}/>
         
        
         <h5 >Images</h5>
@@ -113,45 +114,62 @@ export default function AddForm(props){
             </div>);
         })}
         <Row>
+        <Col l={3} s={6}>
         <label className="fileupload">+
         <input type="file" name="p_img" 
          id="inputform5" onChange={(event)=>handleChange(event,'p_img')}/>
         </label>
+</Col>
+<Col l={3} s={6}>
         <label className="fileupload">+
         <input type="file"  name="p_img" 
          id="inputform5" onChange={(event)=>handleChange(event,'p_img')}/>
         </label>
+        </Col>
+        <Col l={3} s={6}>
         <label className="fileupload">+
         <input type="file"  name="p_img" 
          id="inputform5" onChange={(event)=>handleChange(event,'p_img')}/>
         </label>
+        </Col>
+        <Col l={3} s={6}>
         <label className="fileupload">+
         <input type="file"  name="p_img" 
          id="inputform5" onChange={(event)=>handleChange(event,'p_img')}/>
         </label>
+        </Col>
         </Row>
         <Row>
+        <Col l={3} s={6}>
         <label className="fileupload">+
         <input type="file"  name="p_img" 
          id="inputform5" onChange={(event)=>handleChange(event,'p_img')}/>
         </label>
+        </Col>
+        <Col l={3} s={6}>
         <label className="fileupload">+
         <input type="file"  name="p_img" 
          id="inputform5" onChange={(event)=>handleChange(event,'p_img')}/>
         </label>
+        </Col>
+        <Col l={3} s={6}>
         <label className="fileupload">+
         <input type="file"  name="p_img" 
          id="inputform5" onChange={(event)=>handleChange(event,'p_img')}/>
         </label>
+        </Col>
+        <Col l={3} s={6}>
         <label className="fileupload">+
         <input type="file"  name="p_img" 
          id="inputform5" onChange={(event)=>handleChange(event,'p_img')}/>
         </label>
+        </Col>
         </Row>
         
         <button type="submit"className="postaddbutton">POST ADD</button>
         
     </form>
+    </Col>
     </div>
    
     </div>

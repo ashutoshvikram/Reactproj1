@@ -90,13 +90,7 @@ margin-bottom:-20px;
   padding-left: 20px;
   font-size: 20px;
 }
-.rowcard {
-  width: 20rem;
-  margin-top: 50px;
-  padding-right: 20px;
-  padding-left: 20px;
-  margin-bottom: 40px;
-}
+
 .rowcard:hover {
   transform: scale(1.1);
   box-shadow: 10px 10px #dbdbdb;
@@ -344,58 +338,18 @@ margin-top: -10%;
 }
 /* Create add */
 .categorypost{
-  display: inline-block;
-  position: relative;
-  color:white;
-  position: absolute;
-  margin-left: -15px;
-  padding-top: 0px;
  
- 
-  height: 80%;
-  width:20%;
-  text-align: left;
-  font-weight: 700;
-  margin-top: 0px;
-  padding-left: 1%;
+  
   text-transform: uppercase;
-  font-size: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
   
 }
 
 /* Creae add form */
-.formadd{
-  display: block;
-  position: absolute;
-  margin: auto;
-  top: 100px;
-  right: 0;
-  bottom: 0;
-  left: 100px;
-  width: 40vw;
-  height: 80%;
-  border: 1px solid grey;
-  /* padding-top: 10px;
-  background-color:white;
-  
-   height:920px;
-  border-radius: 25px;
-  width:50%;
-  margin-right: 10%;
-  padding-bottom: 20px;
-  margin-top: 50%;
-  margin-bottom: 50%;
-  margin-left: 50%;
-  transform:translate(-50%,-50%) */
+.formcol{
+border: 2px solid black;
 }
-.innerform{
-  position: relative;
-  margin-left:50px;
-  height:200%;
-  width: 500px;
-  max-width: 300px;
-  border-radius: 25px;
-  }
 .innerformtext{
   padding-bottom:0px;
   margin-bottom: 20px;
@@ -404,44 +358,23 @@ margin-top: -10%;
   width: 400px;
   margin-right:10px ;
 }
-#headingform{
-font-weight: bolder;
-text-align: center;
-}
-#inputform{
-  border:2px solid black;
-  margin-left: 50px;
-  width:60%;
-}
-#inputform2{
-  border:2px solid black;
-  margin-left: 50px;
-  width:60%;
-}
-#inputform3{
-  border:2px solid black;
-  margin-left: 50px;
-  width:60%;
-}
-#inputform4{
-  border:2px solid black;
-  margin-left: 50px;
-  width:60%;
-}
-#inputform5{
-  
-  margin-left: 50px;
-  width:60%;
-}
 .postaddbutton{
  font-weight: 600;
   margin-top: 20px;
-  background-color:black;
+  background-color:lavender;
    font-size: 30px;
   margin-left: 10%;
-  border-radius: 25px;
+  
   color:grey;
-  box-shadow: rgba(2, 0, 36, 1);
+
+}
+.catte{
+  hegiht:800px;
+}
+.postaddbutton:hover{
+  transform: scale(1.1);
+  box-shadow: 2px 2px black;
+  transition: 0.7s ease-out;
 }
 .fileupload{
   height:100%;
@@ -449,7 +382,7 @@ text-align: center;
   font-size: 70px;
   padding-left: 20px;
   padding-right: 20px;
-  margin-left: 30px;
+  margin-left: 15px;
   margin-right: 0px;
   background-color: green;
 }
@@ -461,7 +394,7 @@ input[type="file"] {
 }
 /* Contact us */
 .contactlabel{
-font-size: 30px;
+font-size: 20px;
 
 }
 
@@ -500,4 +433,23 @@ a:hover {
 .toaster{
   margin-top:-73px;
   text-transform: capitalize;
+}
+.cardlink{
+color:black;
+}
+.modalsize{
+font-size: 25px;
+}
+  .profilepic2{
+    border-radius: 50%;
+    float: right;
+}
+.profilepic2:hover{
+  transform: scale(1.1);
+ 
+  transition: 0.7s ease-out;
+  box-shadow: 10px 10px #dbdbdb;
+}
+.profilebox{
+  box-shadow: 10px 10px #dbdbdb;
 }

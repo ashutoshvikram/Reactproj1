@@ -72,7 +72,7 @@ class Footer extends React.Component {
                 <li>
                   <p>
                     <FontAwesomeIcon icon={faHome} className="logofb" />
-                    New York, NY 10012, US
+                   ITM GOI, GWALIOR, INDIA
                   </p>
                 </li>
                 <li>
@@ -81,13 +81,13 @@ class Footer extends React.Component {
                       icon={faEnvelopeSquare}
                       className="logofb"
                     />{" "}
-                    info@example.com
+                    webmags@gmail.com
                   </p>
                 </li>
                 <li>
                   <p>
-                    <FontAwesomeIcon icon={faPhone} className="logofb" /> + 01
-                    234 567 88
+                    <FontAwesomeIcon icon={faPhone} className="logofb" /> + 91
+                    9340567455
                   </p>
                 </li>
               </ul>

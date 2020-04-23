@@ -15,22 +15,25 @@ import Navgbar from './Subcompo/Navgbar';
 import AddForm from './components/AddForm';
 import PostAdd1 from './components/PostAdd1';
 import Aboutus from './components/Aboutus'
-
+import MyAdds from './components/MyAdds';
+import Myprofile from './components/Myprofile'
 function App(){
   return (
     <Router>
-     
-      <Switch>
+     <Switch>
     <Route path="/" exact component={withRouter(Home)}/>
     <Route path="/contactus" exact component={Contactus}/>
+    <PrivateRoute path="/add/:name/:id" exact component={Adddetails} />
     <Route path="/category/:name" exact component={Category}/>
     <Route path="/location/:name" exact component={Location}/>
-    <Route path="/add/:name" exact component={Adddetails}/>
+    <Route path="/add/:name/:id" exact component={Adddetails}/>
     <Route path="/login" exact component={withRouter(Login)}/>
     <Route path="/signup" exact component={Signup}/>
     <Route path="/post" exact component={PostAdd}/>
     <Route path="/post/:category" exact component={PostAdd1}/>
     <Route path="/aboutus" exact component={Aboutus}/>
+    <Route path="/myadds" exact component={MyAdds}/>
+    <Route path="/profile" exact component={Myprofile}/>
     </Switch>
     </Router>
 

@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import  '../index.css'
 import Navgbar from '../Subcompo/Navgbar';
+import Recaptcha from "react-recaptcha";
 import {Link,Redirect,withRouter,BrowserRouter as Router} from 'react-router-dom';
 import Auth  from '../helper/Auth';
 import Message from '../helper/Message'
@@ -13,9 +14,10 @@ class Login extends Component {
             password:"",
             success:false,
             error:false,
-            
+           captcha:false,
           }
           this.messages = this.messages.bind(this);
+          this.verifyCallback = this.verifyCallback.bind(this);
     }
     
     handleChange(event,name){
@@ -24,9 +26,21 @@ class Login extends Component {
             [name]: event.target.value
         })
     }
+    verifyCallback(response){
+        if (response){
+            
+            this.setState({
+                captcha:true
+            })
+        }
+    }
     handleSubmit=event=>{
         event.preventDefault();
-        const data={'email':this.state.email,'password':this.state.password}
+        
+
+
+
+        const data={'email':this.state.email,'password':this.state.password,}
         console.log(data);
         fetch('http://localhost:8000/api/login',{
             method: 'POST',
@@ -71,7 +85,8 @@ class Login extends Component {
     }
     
     render() { 
-         if (this.state.success===true || Auth()===true)
+       
+         if (this.state.success===true && Auth()===true && this.state.captcha===true)
         {
            return (<Redirect to="/"/>);
             
@@ -88,6 +103,14 @@ class Login extends Component {
             <form onSubmit={event=>this.handleSubmit(event)}   className="textbox">
                 <input type="text" required className="usertext"name="name" placeholder="Enter email" onChange={(event)=>this.handleChange(event,"email")}/>
                 <input type="password"  required className="usertext" name="password" placeholder="Enter password" onChange={(event)=>this.handleChange(event,"password")}/>
+                <Recaptcha
+    sitekey="6LdPPeUUAAAAABBcLc0s0AA01hbhcMEQggfqc8T_"
+    render="explicit"
+    verifyCallback={this.verifyCallback}
+    // onloadCallback={thiscallback}
+  />,
+               
+                <br/>
                 <button type="submit" className="logbutton">LOGIN</button>
             </form>
             <p className="signline">Don't have an account <Link to="/signup"> Signup</Link></p>

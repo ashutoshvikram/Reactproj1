@@ -1,4 +1,5 @@
 import React, { Component,useState,useEffect } from 'react';
+import '../index.css'
 import {Link} from 'react-router-dom'
 import {Col,Row} from 'react-materialize'
 import Footer from './Footer'
@@ -9,35 +10,30 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 export default function Addcategory(){
     return (
-        <div>
-    
-    <div className="categorypost card-panel teal lighten-2">
-    <h3  className="headcategory">CATEGORY</h3> 
-   
-        <Row>
-           <Link to="/post/property"> Property<FontAwesomeIcon icon={faArrowRight}/> </Link> 
-        </Row>
-        <Row>
-        <Link to="/post/Automobile"> Automobile</Link><FontAwesomeIcon icon={faArrowRight}/>
-        </Row>
-        <Row>
-        <Link to="/post/Electronics"> Electronics </Link><FontAwesomeIcon icon={faArrowRight}/>
-        </Row>
-        <Row>
-        <Link to="/post/Mobiles">  Mobiles </Link><FontAwesomeIcon icon={faArrowRight}/>
-        </Row>
-        <Row>
-        <Link to="/post/FashionBeauty"> Fashion & Beauty </Link><FontAwesomeIcon icon={faArrowRight}/>
-        </Row>
-        <Row>
-        <Link to="/post/Furnitures"> Furnitures</Link> <FontAwesomeIcon icon={faArrowRight}/>
-        </Row>
-        <Row>
-        <Link to="/post/ElectricalAppiances">Electrical Appliances</Link> <FontAwesomeIcon icon={faArrowRight}/>
-        </Row>
+      <div className="catte">
+      <Col l={3} s={6} className="purple accent-3">
+      <h3>CATEGORY</h3>
+      <Link to="/post/property"> <h5  className="categorypost">Property<FontAwesomeIcon icon={faArrowRight} size='xs'/></h5> </Link> <br/>
       
-        
-        </div>
+    
+      <Link to="/post/Automobile"><h5  className="categorypost"> Automobile<FontAwesomeIcon icon={faArrowRight} size='xs'/></h5></Link><br/>
    
-        </div>);
+  
+      <Link to="/post/Electronics"><h5  className="categorypost"> Electronics<FontAwesomeIcon icon={faArrowRight} size='xs'/></h5></Link><br/>
+      
+  
+      <Link to="/post/Mobiles"> <h5  className="categorypost"> Mobiles <FontAwesomeIcon icon={faArrowRight} size='xs'/></h5></Link><br/>
+  
+  
+      <Link to="/post/FashionBeauty"> <h5  className="categorypost"> Fashion & Beauty<FontAwesomeIcon icon={faArrowRight} size='xs'/></h5></Link><br/>
+  
+  
+      <Link to="/post/Furnitures"> <h5  className="categorypost">Furnitures <FontAwesomeIcon icon={faArrowRight} size='xs'/></h5></Link><br/>
+      
+  
+      <Link to="/post/ElectricalAppiances"><h5  className="categorypost">Electrical Appliances <FontAwesomeIcon icon={faArrowRight} size='xs'/></h5></Link><br/>
+      
+      </Col>
+      </div>
+        );
 }

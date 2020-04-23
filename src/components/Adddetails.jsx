@@ -1,24 +1,25 @@
 import React, { Component,useState,useEffect } from 'react';
 import Carousel_add from '../Subcompo/Carousel_add';
 import Footer from '../Subcompo/Footer'
-import {Row,Col,Button} from 'react-materialize'
+import {Row,Col,Button,Toast} from 'react-materialize'
  import "react-responsive-carousel/lib/styles/carousel.min.css";
  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
  import {faShareAlt,faMapMarkerAlt, faPhoneAlt,faMapMarker} from '@fortawesome/free-solid-svg-icons'
 import Navgbar from '../Subcompo/Navgbar'
 
-const Adddetails=()=>{
-const [values,setValues]=useState({proname:'',desc:'',
+const Adddetails=(props)=>{
+const [values,setValues]=useState({id:'',proname:'',desc:'',
                                 success:false,img:[],
                                 price:'',sellername:'',postedon:'',location:''
                                 ,memberdt:'',profileimg:''})
-const { proname, desc, success,img, price, sellername,postedon,location,memberdt,profileimg } = values;
+const { id,proname, desc, success,img, price, sellername,postedon,location,memberdt,profileimg } = values;
 async function apifetch(){
     console.error("chala")
-    const response= await fetch('http://localhost:8000/api/post/43',{credentials:'include'})
+    const response= await fetch(`http://localhost:8000/api/post/${props.match.params.id}`,
+    {credentials:'include'})
     const res=await response.json()
     console.log(res);
-    setValues({...values,proname:res.items.Product_name,sucess:true,
+    setValues({...values,id:res.items.id,proname:res.items.Product_name,sucess:true,
         desc:res.items.Description, location:res.items.Location,
         postedon:res.items.posted_on,   memberdt:res.seller.registered_on,
         img:res.productimage[0],
@@ -31,11 +32,13 @@ useEffect(()=>{
     apifetch()
 },[]);
 
+const contactseller=(event)=>{
+    fetch(`http://localhost:8000/api/contactseller/${id}`)
+}
 
-
-const locate='Varanasi';
-const urls=`https://www.google.com/maps/embed/v1/place?key=AIzaSyCfF-k0ecpBaGMWRzb43xcKRYENxX9IkxY
-&q=${locate}`
+const locate=location;
+console.log(locate)
+const urls=`https://www.google.com/maps/embed/v1/place?key=AIzaSyCfF-k0ecpBaGMWRzb43xcKRYENxX9IkxY&q=${locate}`
 
 
 return (
@@ -67,15 +70,15 @@ return (
     <Col s={6} className="addlocin">
 
     </Col>
-    <Button
-  node="button"
-  type="submit"
-  waves="light"
-  large={true}
+    <Toast className="toaster"
+  options={{
+    html: 'Email sent to seller.Seller will contact you soon...'
+  }}
 >
-  CONTACT SELLER &ensp;&ensp;<FontAwesomeIcon icon={faPhoneAlt}/>
-  
-</Button>
+  <a style={{fontSize:'20px'}}  onClick={event=>contactseller(event)}>
+  CONTACT SELLER &ensp;&ensp;<FontAwesomeIcon icon={faPhoneAlt}/></a>
+</Toast>
+   
 <p>Member since {memberdt}</p>
     </Row>  
 </Col>
@@ -102,8 +105,7 @@ return (
             height="500"
             frameborder="0"
             src={urls}
-    //         src=`https://www.google.com/maps/embed/v1/place?key=AIzaSyCfF-k0ecpBaGMWRzb43xcKRYENxX9IkxY
-    // &q=${locate}`
+            
             allowfullscreen
           ></iframe>
 </Col>

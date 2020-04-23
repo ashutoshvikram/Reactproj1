@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, { Component,Fragment } from 'react';
+import {Row} from 'react-materialize'
 import Navgbar from '../Subcompo/Navgbar';
 import Cards from '../Subcompo/Cards';
 import Footer from '../Subcompo/Footer';
-import '../App.css';
+import '../index.css';
 class Category extends Component {
     constructor(props) {
         super(props);
@@ -33,13 +34,14 @@ class Category extends Component {
             
             <iframe src="https://giphy.com/embed/3ohzdOrcdpiD26TPt6" width="100" height="100" frameBorder="0" class="giphy-embed"></iframe>
                 :
-            <div className="container">
-                <h1>Category</h1>
-            <div className="row rowcon ">
+                <Fragment>
+                <h3>My Adds</h3>
+           <Row>
         
         {this.state.items.map(item =>(
             <Cards title={item.Product_name}
             date_post={item.posted_on}
+            id={item.id}
             price={item.Price+"/-"}
             location={item.Location}
             image={item.Image}/>
@@ -47,10 +49,11 @@ class Category extends Component {
 
         ))
        
-    }
+        }
+    </Row>
     
-     </div>
-        </div>
+     
+       </Fragment>
         }
         
     <Footer/>

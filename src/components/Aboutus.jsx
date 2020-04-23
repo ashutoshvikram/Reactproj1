@@ -77,7 +77,7 @@ Address: Gwalior India</h5>
             <input style={{fontSize:'30px',border:'2px solid black'}}
              type="text"  onChange={event=>handleChange(event,'subject')}/>
             <textarea 
-            style={{height:'300px',fontSize:'30px',border:'2px solid black'}}
+            style={{height:'200px',fontSize:'30px',border:'2px solid black'}}
             onChange={event=>handleChange(event,'message')}
             placeholder="Message" >
 
