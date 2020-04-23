@@ -21,7 +21,7 @@ function Aboutus() {
      message:message
    }
    console.warn(JSON.stringify(data))
-   fetch('htttp://localhost:8000/api/contactus',{
+   fetch('http://avikrams.pythonanywhere.com/api/contactus',{
      method:'POST',
      body: JSON.stringify(data)
 

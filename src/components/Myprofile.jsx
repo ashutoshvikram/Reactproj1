@@ -36,7 +36,7 @@ function Myprofile() {
 
 
   async function fetching() {
-    const response = await fetch("http://localhost:8000/api/profile", {
+    const response = await fetch("http://avikrams.pythonanywhere.com/api/profile", {
       method:'POST',
       credentials: "include",
     });

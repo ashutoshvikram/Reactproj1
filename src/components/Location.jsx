@@ -17,7 +17,7 @@ class Category extends Component {
     componentDidMount() {
         const { match} = this.props;
         
-        fetch(`http://localhost:8000/api/location?loc=${match.params.name}`)
+        fetch(`http://avikrams.pythonanywhere.com/api/location?loc=${match.params.name}`)
         .then(res =>(res.json()))
         .then(result =>{
             this.setState({

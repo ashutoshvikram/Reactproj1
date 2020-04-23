@@ -42,7 +42,7 @@ class Login extends Component {
 
         const data={'email':this.state.email,'password':this.state.password,}
         console.log(data);
-        fetch('http://localhost:8000/api/login',{
+        fetch('http://avikrams.pythonanywhere.com/api/login',{
             method: 'POST',
             body: JSON.stringify(data),
             credentials: 'include',
@@ -55,7 +55,9 @@ class Login extends Component {
         .then(res=>res.json())
         .then(res=>{
             if (res.success===true)
-            {localStorage.setItem('name',res.sname)
+            
+            {console.log(res)
+                localStorage.setItem('name',res.sname)
             this.setState({'success':true})
             
             }

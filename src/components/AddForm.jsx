@@ -51,7 +51,7 @@ export default function AddForm(props){
         const nextfetch=(newid)=>{
           
             formimages.append('Product_id',newid)
-            fetch('http://localhost:8000/api/postadd',{
+            fetch('http://avikrams.pythonanywhere.com/api/postadd',{
             credentials:'include',
             method: "POST",
             body: formimages,
@@ -60,7 +60,7 @@ export default function AddForm(props){
         }).then(res=>console.log(res.json()))
         return true;
     }
-        fetch('http://localhost:8000/api/postadd/id',{
+        fetch('http://avikrams.pythonanywhere.com/api/postadd/id',{
             credentials:'include',
             method: "POST",
             body: formvalues,

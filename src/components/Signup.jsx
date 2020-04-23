@@ -35,7 +35,7 @@ class Signup extends Component {
       mobno: this.state.mobno
     };
     console.log(data);
-    fetch("http://localhost:8000/api/signup", {
+    fetch("http://avikrams.pythonanywhere.com/api/signup", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {

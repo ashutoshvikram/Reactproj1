@@ -14,7 +14,7 @@ export const logout=()=>{
   
   if (Auth()===true){
     localStorage.clear();
-    fetch('http://localhost:8000/api/logout')
+    fetch('http://avikrams.pythonanywhere.com/api/logout')
     .then(res=>res.json())
     return true
   }

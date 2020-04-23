@@ -15,7 +15,7 @@ const [values,setValues]=useState({id:'',proname:'',desc:'',
 const { id,proname, desc, success,img, price, sellername,postedon,location,memberdt,profileimg } = values;
 async function apifetch(){
     console.error("chala")
-    const response= await fetch(`http://localhost:8000/api/post/${props.match.params.id}`,
+    const response= await fetch(`http://avikrams.pythonanywhere.com/api/post/${props.match.params.id}`,
     {credentials:'include'})
     const res=await response.json()
     console.log(res);

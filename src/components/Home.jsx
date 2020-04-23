@@ -18,7 +18,7 @@ class Home extends Component{
         };
     }
     async componentDidMount(){
-        await fetch('http://localhost:8000/api')
+        await fetch('http://avikrams.pythonanywhere.com/api')
         .then(res =>res.json())
         .then(
             result =>{
