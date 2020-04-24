@@ -76,7 +76,7 @@ export default function AddForm(props){
         
        
          
-        //formvalues.append('p_category',p_category)
+        
         console.log(formimages)
         
         

@@ -49,31 +49,12 @@ class Home extends Component{
             <Fragment>
                 <h3>Recent Adds</h3>
            <Row>
-           {/* <Cards title="Redmi9 pro"
-            date_post="20-APR-2020"
-            id="4"
-            price="4000/-"
-            location="Gwalior"
-            image="./download(1).jpg"/>
-            <Cards title="Redmi 9 pro"
-            date_post="20-APR-2020"
-            id="4"
-            price="8000/-"
-            location="Gwalior"
-            image="./download(1).jpg"/>
-            <Cards title="Redmi9 pro"
-            date_post="20-APR-2020"
-            id="4"
-            price="8000/-"
-            location="Gwalior"
-            image="./download(1).jpg"/>
-            <Cards title="Redmi9 pro"
-            date_post="20-APR-2020"
-            id="4"
-            price="8000/-"
-            location="Gwalior"
-            image="./download(1).jpg"/> */}
+
+          
+
+         
         {this.state.items.map(item =>(
+
             <Cards title={item.Product_name}
             date_post={item.posted_on}
             id={item.id}
