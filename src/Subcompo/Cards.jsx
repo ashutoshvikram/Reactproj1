@@ -33,10 +33,10 @@ function Cards(props) {
         <Link  className="cardlink" to={"/add/"+props.title+"/"+props.id}>{props.title}</Link>
         </p>
         <Row>
-          <Col s={6}>
+          <Col s={12} l={6}>
         <h6><FontAwesomeIcon icon={faMapMarkerAlt} size="sm"/>{props.location} </h6>
         </Col>
-        <Col s={6}>
+        <Col s={12} l={6}>
          <h6>{props.date_post}</h6>
         </Col>
         </Row>
