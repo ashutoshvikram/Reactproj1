@@ -51,7 +51,7 @@ export default function AddForm(props){
         const nextfetch=(newid)=>{
           
             formimages.append('Product_id',newid)
-            fetch('http://avikrams.pythonanywhere.com/api/postadd',{
+            fetch('https://buysellit.herokuapp.com/api/postadd',{
             credentials:'include',
             method: "POST",
             body: formimages,
