@@ -73,18 +73,7 @@ class Home extends Component{
             price="8000/-"
             location="Gwalior"
             image="./download(1).jpg"/>
-        {/* {this.state.items.map(item =>(
-            // <Cards title={item.Product_name}
-            // date_post={item.posted_on}
-            // id={item.id}
-            // price={item.Price+"/-"}
-            // location={item.Location}
-            // image={item.Image}/>
-        
-
-        ))
        
-        } */}
     </Row>
     
      
