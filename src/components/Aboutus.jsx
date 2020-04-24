@@ -109,7 +109,7 @@ Address: Gwalior India</h5>
                   </h5><br/>
                 
                 <h4>“We improvise, experiment and listen to our customers” </h4>
-                <Row>
+                {/* <Row>
                 <h5><Col s={6}><img className="developerpic" 
                  src="./rooms.jpg" width="500" height="500"/> </Col></h5>
                 <h5><Col s={6}><img className="developerpic" 
@@ -119,7 +119,7 @@ Address: Gwalior India</h5>
                 <h5><Col s={6} style={{textAlign:'center'}}>Ashutosh Vikram </Col></h5>
                 <h5><Col s={6} style={{textAlign:'center'}}>Abhishek Agarwal</Col></h5>
              
-                </Row>
+                </Row> */}
               </p>
             </div>
           </div>

@@ -24,9 +24,9 @@ class Sliders extends Component {
           }
         >
           <Caption placement="center">
-            <h3>This is our big Tagline!</h3>
+            <h3>Just sell it</h3>
             <h5 className="light grey-text text-lighten-3">
-              Here's our small slogan.
+              in many categories..
             </h5>
           </Caption>
         </Slide>
@@ -39,9 +39,9 @@ class Sliders extends Component {
           }
         >
           <Caption placement="left">
-            <h3>Left Aligned Caption</h3>
+            <h3>You can also deal in household products.</h3>
             <h5 className="light grey-text text-lighten-3">
-              Here's our small slogan.
+              
             </h5>
           </Caption>
         </Slide>
@@ -54,10 +54,10 @@ class Sliders extends Component {
           }
         >
           <Caption placement="right">
-            <h3>Right Aligned Caption</h3>
-            <h5 className="light grey-text text-lighten-3">
-              Here's our small slogan.
-            </h5>
+            
+            <h3 className="light grey-text text-lighten-3">
+              You can also deal in automobiles
+            </h3>
           </Caption>
         </Slide>
         <Slide
@@ -69,10 +69,8 @@ class Sliders extends Component {
           }
         >
           <Caption placement="center">
-            <h3>This is our big Tagline!</h3>
-            <h5 className="light grey-text text-lighten-3">
-              Here's our small slogan.
-            </h5>
+            <h3>also in Electronics..</h3>
+           
           </Caption>
         </Slide>
       </Slider>

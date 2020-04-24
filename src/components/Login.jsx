@@ -115,7 +115,7 @@ class Login extends Component {
                 <br/>
                 <button type="submit" className="logbutton">LOGIN</button>
             </form>
-            <p className="signline">Don't have an account <Link to="/signup"> Signup</Link></p>
+            <p className="signline">Don't have an account <Link to="/signup" className="cardlink"> Signup</Link></p>
         </div>
         </div>
      

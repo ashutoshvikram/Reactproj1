@@ -23,7 +23,7 @@ function App(){
      <Switch>
     <Route path="/" exact component={withRouter(Home)}/>
     <Route path="/contactus" exact component={Contactus}/>
-    <PrivateRoute path="/add/:name/:id" exact component={Adddetails} />
+    <Route path="/add/:name/:id" exact component={Adddetails} />
     <Route path="/category/:name" exact component={Category}/>
     <Route path="/location/:name" exact component={Location}/>
     <Route path="/add/:name/:id" exact component={Adddetails}/>

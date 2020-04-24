@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDom from "react-dom";
+import {Link } from 'react-router-dom'
 import '../index.css'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -28,13 +29,11 @@ class Footer extends React.Component {
             <Col s={12} l={3}>
               <h5>Footer Content</h5>
               <p>
-                Here you can use rows and columns to organize your footer
-                content.
+                At Buy & Sell it we are there to serve you better always. 
               </p>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit
-                amet numquam iure provident voluptate esse quasi, veritatis
-                totam voluptas nostrum.
+                You can easily post the add and buyer can contact you via email.
+                If you are interested you can deal further.
               </p>
             </Col>
 
@@ -49,7 +48,7 @@ class Footer extends React.Component {
                 </li>
                 <li>
                   <p>
-                    <a href="#!">ABOUT US</a>
+                    <Link to="/aboutus">ABOUT US</Link>
                   </p>
                 </li>
                 <li>
