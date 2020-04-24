@@ -12,7 +12,7 @@ class Home extends Component{
     constructor(){
         super();
         this.state={
-            loading:true,
+            loading:false,
             items: [],
            
         };
