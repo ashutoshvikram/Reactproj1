@@ -17,7 +17,7 @@ class MyAdds extends Component {
     componentDidMount() {
         const { match} = this.props;
         
-        fetch('http://avikrams.pythonanywhere.com/api/myadds')
+        fetch('https://buysellit.herokuapp.com/api/myadds')
         .then(res =>(res.json()))
         .then(result =>{
             this.setState({

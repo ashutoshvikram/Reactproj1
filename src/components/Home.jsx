@@ -18,7 +18,7 @@ class Home extends Component{
         };
     }
     async componentDidMount(){
-        await fetch('http://avikrams.pythonanywhere.com/api')
+        await fetch('https://buysellit.herokuapp.com/api')
         .then(res =>res.json())
         .then(
             result =>{
@@ -49,42 +49,18 @@ class Home extends Component{
             <Fragment>
                 <h3>Recent Adds</h3>
            <Row>
-           <Cards title="Redmi9 pro"
-            date_post="20-APR-2020"
-            id="4"
-            price="4000/-"
-            location="Gwalior"
-            image="./download(1).jpg"/>
-            <Cards title="Redmi 9 pro"
-            date_post="20-APR-2020"
-            id="4"
-            price="8000/-"
-            location="Gwalior"
-            image="./download(1).jpg"/>
-            <Cards title="Redmi9 pro"
-            date_post="20-APR-2020"
-            id="4"
-            price="8000/-"
-            location="Gwalior"
-            image="./download(1).jpg"/>
-            <Cards title="Redmi9 pro"
-            date_post="20-APR-2020"
-            id="4"
-            price="8000/-"
-            location="Gwalior"
-            image="./download(1).jpg"/>
-        {/* {this.state.items.map(item =>(
-            // <Cards title={item.Product_name}
-            // date_post={item.posted_on}
-            // id={item.id}
-            // price={item.Price+"/-"}
-            // location={item.Location}
-            // image={item.Image}/>
+          {this.state.items.map(item =>(
+            <Cards title={item.Product_name}
+            date_post={item.posted_on}
+            id={item.id}
+            price={item.Price+"/-"}
+            location={item.Location}
+            image={item.Image}/>
         
 
         ))
        
-        } */}
+        }
     </Row>
     
      

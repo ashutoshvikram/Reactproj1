@@ -42,7 +42,7 @@ class Login extends Component {
 
         const data={'email':this.state.email,'password':this.state.password,}
         console.log(data);
-        fetch('http://avikrams.pythonanywhere.com/api/login',{
+        fetch('https://buysellit.herokuapp.com/api/login',{
             method: 'POST',
             body: JSON.stringify(data),
             credentials: 'include',

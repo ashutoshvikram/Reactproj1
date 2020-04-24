@@ -17,7 +17,7 @@ class Favourites extends Component {
     componentDidMount() {
         const { match} = this.props;
         
-        fetch('http://avikrams.pythonanywhere.com/api/favourites')
+        fetch('https://buysellit.herokuapp.com/api/favourites')
         .then(res =>(res.json()))
         .then(result =>{
             this.setState({

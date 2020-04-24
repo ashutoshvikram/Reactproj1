@@ -51,7 +51,7 @@ export default function AddForm(props){
         const nextfetch=(newid)=>{
           
             formimages.append('Product_id',newid)
-            fetch('http://avikrams.pythonanywhere.com/api/postadd',{
+            fetch('https://buysellit.herokuapp.com/api/postadd',{
             credentials:'include',
             method: "POST",
             body: formimages,
@@ -60,7 +60,7 @@ export default function AddForm(props){
         }).then(res=>console.log(res.json()))
         return true;
     }
-        fetch('http://avikrams.pythonanywhere.com/api/postadd/id',{
+        fetch('https://buysellit.herokuapp.com/api/postadd/id',{
             credentials:'include',
             method: "POST",
             body: formvalues,
@@ -76,7 +76,7 @@ export default function AddForm(props){
         
        
          
-        //formvalues.append('p_category',p_category)
+        
         console.log(formimages)
         
         

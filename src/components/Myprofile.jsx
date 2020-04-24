@@ -36,7 +36,7 @@ function Myprofile() {
 
 
   async function fetching() {
-    const response = await fetch("http://avikrams.pythonanywhere.com/api/profile", {
+    const response = await fetch("https://buysellit.herokuapp.com/api/profile", {
       method:'POST',
       credentials: "include",
     });
