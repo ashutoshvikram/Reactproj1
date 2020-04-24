@@ -60,7 +60,7 @@ export default function AddForm(props){
         }).then(res=>console.log(res.json()))
         return true;
     }
-        fetch('http://avikrams.pythonanywhere.com/api/postadd/id',{
+        fetch('https://buysellit.herokuapp.com/api/postadd/id',{
             credentials:'include',
             method: "POST",
             body: formvalues,
