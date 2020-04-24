@@ -49,7 +49,12 @@ class Home extends Component{
             <Fragment>
                 <h3>Recent Adds</h3>
            <Row>
-          {this.state.items.map(item =>(
+
+          
+
+         
+        {this.state.items.map(item =>(
+
             <Cards title={item.Product_name}
             date_post={item.posted_on}
             id={item.id}

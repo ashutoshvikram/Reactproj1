@@ -135,7 +135,7 @@ function Navgbar() {
             <Link to="/post">Sell</Link>
           </p>
           <p>
-            <Link to="/login">About us</Link>
+            <Link to="/aboutus">About us</Link>
           </p>
         </div>
       }
